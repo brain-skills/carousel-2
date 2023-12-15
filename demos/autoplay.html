@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owl Carousel 2 - Autoplay Demo</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,300italic" rel="stylesheet">
+    <link rel="apple-touch-icon-precomposed" type="image/x-icon" href="../assets/images/favicons/512.png" sizes="512x512" />
+    <link rel="apple-touch-icon-precomposed" type="image/x-icon" href="../assets/images/favicons/256.png" sizes="256x256" />
+    <link rel="apple-touch-icon-precomposed" type="image/x-icon" href="../assets/images/favicons/128.png" sizes="128x128" />
+    <link rel="icon" type="image/png" href="../assets/images/favicons/favicon.png" sizes="64x64">
+    <link rel="stylesheet" href="../assets/css/docs.theme.min.css">
+    <link rel="stylesheet" href="../assets/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="../assets/owlcarousel/assets/owl.theme.default.min.css">
+    <script src="../assets/vendors/jquery.min.js"></script>
+    <script src="../assets/owlcarousel/owl.carousel.js"></script>
+</head>
+
+<body>
+  <header class="header">
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="brand left">
+          <h3><a href="/">Owl Carousel 2</a></h3>
+        </div>
+        <a id="toggle-nav" class="right"><span></span><span></span><span></span></a> 
+        <div class="nav-bar">
+          <ul class="clearfix">
+              <li><a href="/">Home</a></li>
+              <li><a href="docs/started-welcome.html">Docs</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="title">
+      <div class="row">
+          <div class="large-12 columns"><h1>Autoplay</h1></div>
+      </div>
+  </section>
+
+    <!--  Demos -->
+    <section id="demos">
+      <div class="row">
+        <div class="large-12 columns">
+          <div class="owl-carousel owl-theme">
+            <div class="item">
+              <h4>1</h4>
+            </div>
+            <div class="item">
+              <h4>2</h4>
+            </div>
+            <div class="item">
+              <h4>3</h4>
+            </div>
+            <div class="item">
+              <h4>4</h4>
+            </div>
+            <div class="item">
+              <h4>5</h4>
+            </div>
+            <div class="item">
+              <h4>6</h4>
+            </div>
+            <div class="item">
+              <h4>7</h4>
+            </div>
+            <div class="item">
+              <h4>8</h4>
+            </div>
+            <div class="item">
+              <h4>9</h4>
+            </div>
+            <div class="item">
+              <h4>10</h4>
+            </div>
+            <div class="item">
+              <h4>11</h4>
+            </div>
+            <div class="item">
+              <h4>12</h4>
+            </div>
+          </div>
+          <a class="button secondary play">Play</a> 
+          <a class="button secondary stop">Stop</a> 
+          <h3 id="overview">Overview</h3>
+          <p>Autoplay plugin has three options:</p>
+          <pre><code>//default settings:
+autoplay:false
+autoplayTimeout:5000
+autoplayHoverPause:false</code></pre>
+          <p>In this example i&#39;ve added two buttons with custom events for play and stop:</p>
+          <pre><code>var owl = $(&#39;.owl-carousel&#39;);
+owl.owlCarousel({
+    items:4,
+    loop:true,
+    margin:10,
+    autoplay:true,
+    autoplayTimeout:1000,
+    autoplayHoverPause:true
+});
+$(&#39;.play&#39;).on(&#39;click&#39;,function(){
+    owl.trigger(&#39;play.owl.autoplay&#39;,[1000])
+})
+$(&#39;.stop&#39;).on(&#39;click&#39;,function(){
+    owl.trigger(&#39;stop.owl.autoplay&#39;)
+})</code></pre>
+          <script>
+            $(document).ready(function() {
+              var owl = $('.owl-carousel');
+              owl.owlCarousel({
+                items: 4,
+                loop: true,
+                margin: 10,
+                autoplay: true,
+                autoplayTimeout: 1000,
+                autoplayHoverPause: true
+              });
+              $('.play').on('click', function() {
+                owl.trigger('play.owl.autoplay', [1000])
+              })
+              $('.stop').on('click', function() {
+                owl.trigger('stop.owl.autoplay')
+              })
+            })
+          </script>
+        </div>
+      </div>
+    </section>
+
+  <!-- vendors -->
+  <script src="../assets/vendors/highlight.js"></script>
+  <script src="../assets/js/app.js"></script>
+</body>
+</html>
